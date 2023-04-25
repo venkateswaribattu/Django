@@ -1,0 +1,111 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    input[name]{
+      margin-top:8px;
+    }
+    input[value]{
+      margin-top:2px;
+    }
+    form{
+      padding:10px;
+      box-shadow:0px 0px 5px red;
+      border-radius:5px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <h4 clas="text-center">GIVE THE EMPLAYES INFORMATION</h4>
+          <form  method="POST">
+            {% csrf_token%}
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" name="fname" class="form-control" placeholder="First Name">
+
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="lname" class="form-control" placeholder="Last Name">
+
+              </div>
+
+            </div>
+            <!-- <label>First Name:</label> -->
+            <!-- <input type="text" name="fname" class="form-control" placeholder="First Name"> -->
+            <!-- <label> Last name</label> -->
+            <!-- 1 -->
+            <!-- <label>Emai Id:</label> -->
+            <div class="row">
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="Email">
+
+              </div>
+              <div class="col-md-6">
+                <input type="number" name="mobile" class="form-control" placeholder="Mobile">
+
+              </div>
+
+            </div>
+            <!-- <input type="email" name="email" class="form-control" placeholder="Email"> -->
+            <!-- <label>Mobile:</label> -->
+            <!-- <input type="number" name="mobile" class="form-control" placeholder="Mobile"> -->
+            <!-- <label>Company:</label> -->
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" name="company" class="form-control" placeholder="Company">
+
+              </div>
+              <div class="col-md-6">
+                <input type="number" name="salary" class="form-control" placeholder="Salary">
+
+              </div>
+
+            </div>
+            <!-- <input type="text" name="company" class="form-control" placeholder="Company"> -->
+            <!-- <label>Salary:</label> -->
+            <!-- <input type="number" name="salary" class="form-control" placeholder="Salary"> -->
+            <!-- <label>Location:</label> -->
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" name="location" class="form-control" placeholder="Location">
+
+              </div>
+              <div class="col-md-6">
+                <input type="number" name="expirence" class="form-control" placeholder="Expirence">
+
+              </div>
+
+            </div>
+            <!-- <input type="text" name="location" class="form-control" placeholder="Location"> -->
+            <!-- <label>Expirence:</label> -->
+            <!-- <input type="number" name="expirence" class="form-control" placeholder="Expirence"> -->
+            <!-- <label>Domain:</label> -->
+
+            <center>
+              <input type="submit" value="Add" class="btn btn-success text-white">
+              <input type="clean"  value="clear" class="btn btn-danger text-white">
+              </center>
+
+
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="text-center">
+      <a href="home" class="btn btn-dark mb-5">Go to main Page</a>
+
+    </div>
+
+  </body>
+</html>

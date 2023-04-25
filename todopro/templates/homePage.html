@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html'%}
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4 mt-5">
+          <form  method="POST">
+            {% csrf_token %}
+            TITEL:<textarea name="title" rows="1" cols="50" class="mt-2" placeholder="Enter Title"></textarea>
+            DESCRIPTION:<textarea name="desc" rows="8" cols="80" class="mt-2" placeholder="Enter Your Data"></textarea>
+
+            DATE:<input type="date" name="date" value="date">
+
+            <center class="mt-2">
+              <input type="submit"  value="Submit" class="btn btn-success text-white">
+              <input type="reset"  value="Cancel" class="btn btn-danger text-white">
+              </center>
+          </form>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+<div class="text-center mt-4">
+  <a href="{% url 'main' %}" class="btn btn-success text-white">GoTo Main Page</a>
+
+</div>
+
+  </body>
+</html>

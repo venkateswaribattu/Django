@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html'%}
+    <title></title>
+
+
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+  <h1 class='text-center font-weight-bold display-3  text-success'>Welcome to nth</h1>
+
+    {% block content %}
+
+    {% endblock %}
+    <h1 class="font-weight-bold text-center text-danger">Thank you</h1>
+
+  </body>
+</html>

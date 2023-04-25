@@ -1,0 +1,68 @@
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {%include 'cdnlines.html'%}
+  </head>
+  <style media="screen">
+    input[name]{
+      margin-top:-10px;
+    }
+    input[value]{
+      margin-top:2px;
+    }
+    form{
+      padding:10px;
+      box-shadow:0px 0px 10px pink,0px 0px 5px black;
+      border-radius:8px;
+      background-color:blue;
+    }
+    body{
+      background-image:url({% static "images/bg6.jpeg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+
+    }
+
+  </style>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <h3 class="text-center"> plase Enter your Data!!!</h3>
+          <form  method="POST">
+            {% csrf_token %}
+            <label>Enter First Number</label>
+            <input type="text" name="fname"class="form-control">
+            <label>Enter Last Number</label>
+            <input type="text" name="lname"class="form-control">
+
+            <label>Enter mobile number</label>
+            <input type="number" name="contact"class="form-control">
+            <label>Enter Course</label>
+            <input type="text" name="course"class="form-control">
+            <label>Enter fee</label>
+            <input type="number" name="fee" class="form-control">
+
+            <center>
+              <input type="submit" value="Save"class="btn btn-success">
+
+
+              <input type="reset"  value="cancel"class="btn btn-danger">
+              </center>
+
+          </form>
+          <a href="{% url 'main' %}" class="btn btn-success btn-lg">Go to Nextpage</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+
+  </head>
+  <style media="screen">
+    body{
+      background-image: url({% static "images/ram1.jpg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+
+    }
+    textarea{
+      background-image: url({% static "images/ram2.jpg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+      text-rendering: red;
+
+    }
+    h1{
+      color:yellow;
+    }
+  </style>
+  <body>
+    <h1 class="text-center"> YouTube Comment Data</h1>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4" >
+          <form  method="POST">
+            {% csrf_token %}
+            <textarea name="name" rows="8" cols="60"  placeholder="  YouTube Comment Section"></textarea>
+            <div class="text-right">
+              <input type="submit"  value="NEW COMMENT" class="btn btn-success" >
+              <input type="reset"  value=" CANCEL" class="btn btn-danger">
+
+            </div>
+            <!-- <input type="text" name="Comment" placeholder="Comment" class="form-control"> -->
+            <div class="text-center text-white">
+              {% if abc %}
+              {% for i in abc %}
+               {{i.Comment}}<br><hr>
+
+              {% endfor%}
+              {% else%}
+              <h3 class="text-center font-weight-bold mt-5">Data is Not Avalible</h3>
+              {% endif %}
+
+            </div>
+
+            <!-- <input type="submit"  value="NEW COMMENT" class="btn btn-success" >
+            <input type="reset"  value=" CANCEL" class="btn btn-danger"> -->
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- <center>
+      <input type="submit"  value="NEW COMMENT" class="btn btn-success">
+      <input type="reset"  value=" CANCEL" class="btn btn-danger">
+    </center> -->
+
+
+
+  </body>
+</html>

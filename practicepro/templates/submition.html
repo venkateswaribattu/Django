@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    body{
+      background-image:url({% static "images/bg2.jpeg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+    }
+  </style>
+  <body>
+    <div class="text-center">
+      {% if xyz %}
+      {% for i in xyz %}
+      <h1 class="text-center  mt-5">{{i.frist_name}}</h1>
+      Last Name:{{i.last_name}}<hr>
+      Contact:{{i.contact}}<hr>
+      Course:{{i.course}}<hr>
+      Fee:{{i.fee}}<hr>
+      {% endfor %}
+
+      {% else %}
+      <h1>your submition is not successful</h1>
+      {% endif %}
+
+    </div>
+
+
+
+
+
+<div class="text-center">
+  <a href="{% url 'main' %}" class="btn-danger btn-lg ">Go to back</a>
+  <a href="{% url 'succes' %}" class="btn-success btn-lg ">submition</a>
+
+</div>
+
+
+
+  </body>
+</html>

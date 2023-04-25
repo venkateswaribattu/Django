@@ -1,0 +1,72 @@
+
+{% extends 'base.html' %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    {% block content %}
+    <style media="screen">
+    body{
+    background-image:url({% static "images/nth4.jpg"%});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+
+  }
+
+    </style>
+    <h1 class="text-center text-white">NTH-Courses</h1>
+    {% if courses %}
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-1 col-md-10">
+          <table class="table table-bordered text-center">
+            <thead class="bg-success text-white">
+              <tr>
+                <th>Course Name</th>
+                <th>Fee</th>
+                <th>Duration</th>
+                <th>Start Date</th>
+                <th>Trainer Name</th>
+                <th>Trainer Exprience</th>
+                <th>Trainer Mode</th>
+              </tr>
+            </thead>
+            <tbody class="bg-dark text-white">
+              {% for i in courses %}
+              <tr>
+                <td>{{i.course_name}}</td>
+                <td>{{i.fee}}</td>
+                <td>{{i.duration}}</td>
+                <td>{{i.start_date}}</td>
+                <td>{{i.trainer_name}}</td>
+                <td>{{i.trainer_exp}}</td>
+                <td>{{i.trainer_mode}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    {% else %}
+    <h1>No New Batches Now</h1>
+    {% endif %}
+    {% endblock %}
+
+  </body>
+</html>

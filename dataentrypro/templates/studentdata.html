@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+    <style media="screen">
+    body{
+      background-image:url({% static "images/gd4.jpg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+
+    }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center font -weight-blod mt-4 text-white">Student Name</h1>
+
+    <div class="text-center text-white">
+      {% if abc %}
+      {% for i in abc %}
+            <h1 class="text-center text-white">{{i.first_name}} Details</h1>
+
+            First Name: {{i.first_name}} <br>
+            Last Name:{{i.last_name}}<br>
+            Email: {{i.email}}<br>
+            Mobile: {{i.mobile}}<br>
+            Course: {{i.course}}<br>
+            Fee: {{i.fee}}<br>
+            Location: {{i.location}} <br>
+            Institute: {{i.institute}}
+
+      {% endfor %}
+      {% else%}
+      <h1 class="text-center mt-4 text-white">Student Data not Avabile</h1>
+      {% endif %}
+    </div>
+
+    <div class=" text-center mt-4">
+      <a href="{% url 'add' %}" class="btn btn-primary btn-lg text-white"> Add student</a>
+      <a href="{% url 'home' %}" class="btn btn-warning btn-lg text-white"> Goto Main Page</a>
+
+    </div>
+
+
+  </body>
+</html>

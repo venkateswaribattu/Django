@@ -1,0 +1,120 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+
+    {% block content %}
+    <style media="screen">
+    body{
+    background-image:url({% static "images/nth4.jpg"%});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+
+  }
+
+    </style>
+
+    <div class="conainer-fluid mt-2">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/vyshu.jpg' %}"  class="img-thumbnail" style="width:80%; height:80%; border:2px red solid;
+          border-radius:20px;">
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/anna.jpg' %}"  class="img-thumbnail" style="width:80%;height:80%;
+          border:2px red solid;border-radius:20px" >
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/harsha.jpg'%}"class="img-thumbnail"  style="width:80%; height:80%;
+          border:2px red solid; border-radius:20px;">
+
+
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'images/anna1.jpg'%}"class="img-thumbnail"  style="width:80%; height:80%;
+        border:2px red solid; border-radius:20px;">
+
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="conainer-fluid mt-2">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/likitha.jpg' %}"  class="img-thumbnail" style="width:80%; height:80%; border:2px red solid;
+          border-radius:20px;">
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/vasantha.jpg' %}"  class="img-thumbnail" style="width:80%;height:80%; border:2px red solid;
+          border-radius:20px" >
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/venky1.jpg'%}"class="img-thumbnail"  style="width:80%; height:80%; border:2px red solid;
+           border-radius:20px;">
+
+
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'images/anna.jpg'%}"class="img-thumbnail"  style="width:80%; height:80%; border:2px red solid;
+         border-radius:20px;">
+
+      </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="conainer-fluid mt-2">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/anna1.jpg' %}"  class="img-thumbnail" style="width:80%; height:80%; border:2px red solid;
+          border-radius:20px;">
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/vani.jpg' %}"  class="img-thumbnail" style="width:80%;height:80%; border:2px red solid;
+          border-radius:20px" >
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/vyshu.jpg'%}"class="img-thumbnail"  style="width:80%; height:80%; border:2px red solid;
+           border-radius:20px">
+
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/harsha.jpg'%}"class="img-thumbnail"  style="width:80%; height:80%; border:2px red solid;
+           border-radius:20px">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    {% endblock %}
+
+
+
+
+  </body>
+</html>

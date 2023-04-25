@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <body>
+    <h1 class="text-center font-weight-bold">My To Do list</h1>
+    {% if abc %}
+    {% for i in abc %}
+      <a href="{% url 'data' %}">{{i.title}}</a>
+    {% endfor %}
+    {% else %}
+    <h1>data is not avabile</h1>
+    {% endif %}
+    <div class="text-right">
+      <a href="{% url 'add'%}" class="btn btn-success btn-lg">Add Task</a>
+
+    </div>
+
+  </body>
+</html>

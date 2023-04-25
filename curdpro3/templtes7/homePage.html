@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center mt-3">NTH-EmpInformation</h1>
+          <div class="text-right mb-1">
+            <a href="{% url 'add' %}" class="btn-success text-white btn btn-lg">ADD EMPLOYEES DATA</a>
+
+          </div>
+          {% if abc %}
+          <table class="table table-bordered text-center mt-10">
+            <thead class="bg-success text-white">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Location</th>
+                <th>Expirence</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="bg-dark text-warning">
+              <h1 class="text-center font-weight-bold display-5">EMPLOYEES INFORMATION</h1>
+              {% for i in abc %}
+              <!-- <h1 class="text-center font-weight-bold display-1">emplayes</h1> -->
+              <tr>
+                <td>{{i.first_name}}</td>
+                <td>{{i.last_name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.company}}</td>
+                <td>{{i.salary}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.expirence}}</td>
+
+                <td>
+                  <a href="{% url 'update' i.id %}" class="btn btn-warning">Update</a>
+                  <a href="{% url 'delete' i.id %}" class="btn btn-danger">Delete</a>
+
+                </td>
+              </tr>
+              {% endfor %}
+              <h1 class="text-center  font-weight-bold display-5"></h1>
+            </tbody>
+          </table>
+          {% else %}
+          <h1 class="text-center"> Emplayes Data Not available</h1>
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

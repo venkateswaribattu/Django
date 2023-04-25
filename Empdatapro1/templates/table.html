@@ -1,0 +1,26 @@
+<table class="table text-center table-bordered mt-4">
+  <thead class="bg-success text-white">
+    <tr>
+      <th>First Name</th>
+      <th>Last name</th>
+      <th>Email ID</th>
+      <th>Salary</th>
+      <th>Company</th>
+      <th>Location</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody class="bg-dark text-white">
+    {% for i in Data %}
+    <tr>
+      <td>{{i.first_name}}</td>
+      <td>{{i.last_name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.salary}}</td>
+      <td>{{i.company}}</td>
+      <td>{{i.location}}</td>
+      <td>{{i.address}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <style media="screen">
+
+
+  body{
+    background-image:url({% static "images/raj6.jpg"%});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+
+  }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-2 col-md-8 text-center  mt-2 text-danger mt-5">
+          <h1 class="mt-5"></h1>{% if abc %}
+          {% for i in abc %}
+          <h1 class="text-white font-weight-bold">{{i.title}}</h1><br>
+          <h3 class="text-white font-weight-bold">DESCRIPTION:{{i.desc}}</h3><br>
+          <h3 class="text-white font-weight-bold">DATE:{{i.date}}</h3><br>
+            <!-- DESCRIPTION:{{i.desc}}<br>
+            DATE:{{i.date}}<br> -->
+          {% endfor %}
+          {% else %}
+          <h1 class="text-center font-weight-bold mt-5">Data is Not Avalible</h1>
+          {% endif %}
+
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="text-center mt-5">
+      <a href="{% url 'add' %}" class="btn bg-secondary text-white btn-lg">Add Activity</a>
+      <a href="{% url 'main' %}" class="btn bg-secondary text-white btn-lg"> Go to mainPage</a>
+
+    </div>
+
+  </body>
+</html>

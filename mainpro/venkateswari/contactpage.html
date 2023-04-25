@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+
+    {% block content %}
+
+    <style media="screen">
+      form{
+        box-shadow:0px 0px 10px pink,0px 0px 10px black;
+        border-radius: 20px;
+      }
+      body{
+      background-image:url({% static "images/nth4.jpg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+
+    }
+    </style>
+    <div class="container-fluid">
+      <div class="row">
+        <div class=" col-md-3">
+          <h2 class="text-center font-weight-bold text-secondary"> Enter User details</h2>
+          <form  method="POST" >
+            {% csrf_token %}
+            <input type="text" name="fname" class="form-control" placeholder="first name">
+            <input type="text" name="lname" class="form-control" placeholder="last name">
+            <input type="text" name="email" class="form-control" placeholder="Email">
+            <input type="number" name="mobile" class="form-control" placeholder="mobile">
+            <input type="text" name="course" class="form-control" placeholder="course">
+            <input type="text" name="location" class="form-control" placeholder="location">
+
+            <div class="text-center">
+
+              <input type="submit"  value="submit " class="btn btn-success " >
+              <input type="reset"  value="cancel" class="btn btn-danger ">
+
+            </div>
+
+
+          </form>
+
+        </div>
+        <div class=" col-md-4 ml-5">
+          <h2 class="text-center font-weigth-bold text-secondary">Address</h2>
+          <h5 class="text-danger">Flat No 303, 3rd floor<br> Naga Sai Nivas Prime Hospital Lane<br> opposite to Balaji Towers<br> Ameerpet, Hyderabad, Telangana 500016</h5><br><br>
+          <h5>#303, Nagasai Nivas, Aster Prime Hospital Lane, Ameerpet, Hyd.
+Contact: +91-9010607010, +91-8179817681</h5>
+</div>
+<div class=" col-md-4">
+  <h2 class=" font-weight-bold ml-5 text-secondary">MAP WITH DIRECTIONS</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15225.780616967357!2d78.4457617!3d17.4383952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb25b7c2fe2e4fd5d!2z4LCo4LC-4LCw4LC-4LCv4LCjIOCwn-CxhuCwleCxjSDgsLngsYzgsLjgsY0!5e0!3m2!1ste!2sin!4v1672229044084!5m2!1ste!2sin" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -
+
+</div>
+
+
+      </div>
+
+    </div>
+
+
+    {% endblock %}
+
+  </body>
+</html>

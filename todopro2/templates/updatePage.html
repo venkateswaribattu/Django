@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+
+    <title></title>
+  </head>
+  <style media="screen">
+
+
+  body{
+    background-image:url({% static "images/raj12.jpg"%});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+
+  }
+  textarea{
+      background-image: url({% static "images/raj13.jpg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+
+
+
+    }
+    input{
+      background-image: url({% static "images/raj13.jpg"%});
+    }
+    a{
+      background-image: url({% static "images/raj13.jpg"%});
+
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-4 col-md-4 mt-5">
+          <form  method="POST" action="{% url 'updating' abc.id %}" class="mt-5" >
+            {% csrf_token %}
+              TITLE:<textarea name="title" rows="1" cols="50" class="mt-2" placeholder="Enter Title..">{{ abc.title }}</textarea>
+              DESRIPTION:<textarea name="desc" rows="8" cols="80" class="mt-2" placeholder="Enter Discripition">{{ abc.desc }}</textarea>
+              <label>DATE:</label>
+              <input type="datetime-local" name="date" placeholder="Enter Date">
+            <center class="mt-1">
+              <input type="submit"  value="update" class="btn btn-success text-white">
+              <input type="reset"  value="cancel" class="btn btn-danger text-white">
+            </center>
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="text-center mt-2">
+      <a href="{% url 'main' %}"  class="btn bg-dark  text-white text-center">Go to Main Page</a>
+
+    </div>
+
+  </body>
+</html>

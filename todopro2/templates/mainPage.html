@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <style media="screen">
+
+
+  body{
+    background-image:url({% static "images/raj8.jpg"%});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+
+  }
+  </style>
+  <body>
+    <h1 class="text-center font-weight-bold">My To Do list</h1>
+
+    <div class="text-right">
+      <a href="{% url 'add' %}" class="btn btn-warning btn-lg mr-5">Add Tasking</a>
+
+    </div>
+    <div class="text-center">
+      {% if abc %}
+      {% for i in abc %}
+      <div class="text-center text-white">
+        <a href="{% url 'data' i.id %}" class="btn text-white">{{ i.title }}</a>
+        <a href="{% url 'update' i.id %}" class="btn btn-primary  mt-3">update</a>
+        <a href="{% url 'delete' i.id %}" class="btn btn-secondary  mt-3">delete</a>
+
+      </div>
+
+      {% endfor %}
+      {% else %}
+      <h1>data is not avabile</h1>
+      {% endif %}
+
+    </div>
+
+  </body>
+</html>

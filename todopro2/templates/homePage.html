@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html'%}
+    <title></title>
+  </head>
+  <style media="screen">
+
+
+  body{
+    background-image:url({% static "images/raj11.jpg"%});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+
+  }
+  textarea{
+      background-image: url({% static "images/raj13.jpg"%});
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100%;
+      width:100%;
+      text-rendering: red;
+
+    }
+    input{
+      background-image: url({% static "images/raj13.jpg"%});
+    }
+    a{
+      background-image: url({% static "images/raj13.jpg"%});
+
+    }
+
+
+  </style>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-6 mt-5">
+          <form  method="POST">
+            {% csrf_token %}
+            TITEL:<textarea name="title" rows="1" cols="50" class="mt-2" placeholder="Enter Title" class="form-control"></textarea><br>
+            DESCRIPTION:<textarea name="desc" rows="8" cols="80" class="mt-2" placeholder="Enter Your Data"></textarea><br>
+            <label>Date:</label>
+
+            DATE:<input type="date" name="date" value="date">
+
+            <center class="mt-2">
+              <input type="submit"  value="Submit" class="btn btn-success text-white">
+              <input type="reset"  value="Cancel" class="btn btn-danger text-white">
+              </center>
+          </form>
+          <div class="text-center mt-4">
+            <a href="{% url 'main' %}" class="btn btn-success text-white">GoTo Main Page</a>
+
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>

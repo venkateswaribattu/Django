@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>main page</title>
+    {% include 'cdnlines.html'%}
+    <style media="screen">
+      body{
+        background-image: url({% static "images/bg5.jpg"%});
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">Employee Ditails</h1>
+          <div class="">
+            <a href="{% url 'home' %}" class="btn btn-success btn-lg  ">Apply To This Job</a>
+
+          </div>
+          {% if xyz %}
+          {% for i in xyz %}
+          <div class="text-center ">
+            <a href="{% url 'submit' i.id %}" class="text-white"><h3>{{i.first_name}}</h3?</a>
+
+          </div>
+
+
+
+          {% endfor %}
+
+          {% else %}
+          <h1>This is not supported to us</h1>
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="text-center">
+      <a href="{% url 'home' %}" class="btn btn-danger btn-lg">Go to Back</a>
+
+    </div>
+
+
+  </body>
+</html>

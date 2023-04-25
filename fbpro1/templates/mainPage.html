@@ -1,0 +1,50 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <style media="screen">
+    h1{
+      margin-top:80px;
+      text-align: center;
+    }
+    /* form{
+      box-shadow:0px 0px 10px pink,0px 0px 5px red;
+    } */
+    body{
+  background-image:url({% static "images/rani1.jpg"%});
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+  width:100%;
+
+}
+  </style>
+  <body>
+    <h1 class="text-center mt-3 text-white">Welcome to Flightbooking</h1>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-6 ">
+          <form  method="POST" class="mt-4">
+            {% csrf_token %}
+            <label class="text-white mt-5 font-weight-bold">Enter Numbers of Passengers</label>
+            <input type="number" name="passenger" placeholder="Enter your booking number" class="form-control">
+            <!-- <textarea name="passenger" rows="1" cols="45" placeholder="Enter number of passengers"></textarea> -->
+            <center>
+              <a href="{% url 'main/' %}" class="btn bg-success text-white mt-3 btn-lg">Submit</a>
+              <a href="{% url 'display' %}" class="btn bg-primary text-white mt-2 btn-lg">Display Page</a>
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
